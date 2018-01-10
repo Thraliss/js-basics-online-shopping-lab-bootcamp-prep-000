@@ -58,10 +58,8 @@ function total() {
 }
 
 function removeFromCart(item) {
-  cart.forEach(function(element){
-    if (element === item){
-      cart.delete(element);
-    }
+  cart.forEach(function(element, index, array){
+    console.log(cart[element]);
   })
 }
 
