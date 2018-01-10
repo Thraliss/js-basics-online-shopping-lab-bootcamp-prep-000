@@ -59,12 +59,15 @@ function total() {
 
 function removeFromCart(item) {
   cart.forEach(function(element, index, array){
+    var foundTarget = false; 
     if (Object.keys(element).join().indexOf(item) != -1){
       cart.splice(index, 1);
-    } else if (index === cart.length - 1 && Object.keys(element).join().indexOf(item) === -1 ){
-      console.log(`That item is not in your cart.`)
-    }
+      foundTarget = true;
+    } 
   });
+  if (!foundTarget){
+    console.log(`That item is not in your cart.`)
+  }
   return(cart);
 }
 
