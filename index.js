@@ -58,8 +58,8 @@ function total() {
 }
 
 function removeFromCart(item) {
+  var foundTarget = false; 
   cart.forEach(function(element, index, array){
-    var foundTarget = false; 
     if (Object.keys(element).join().indexOf(item) != -1){
       cart.splice(index, 1);
       foundTarget = true;
