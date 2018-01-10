@@ -59,8 +59,11 @@ function total() {
 
 function removeFromCart(item) {
   cart.forEach(function(element, index, array){
-    console.log(cart[element]);
-  })
+    if (Object.keys(element).join().indexOf(item) != -1){
+      cart.splice(index, 1);
+    }
+  });
+  return(cart);
 }
 
 function placeOrder(cardNumber) {
